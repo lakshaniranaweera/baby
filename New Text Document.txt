@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080, height=1920, initial-scale=1.0">
+<title>Landing Page</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 1080px;
+    height: 1920px;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+  }
+
+  body {
+    background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1080&h=1920') 
+                no-repeat center center/cover;
+    position: relative;
+  }
+
+  /* Clouds */
+  .cloud {
+    position: absolute;
+    top: 0;
+    left: -400px;
+    width: 300px;
+    opacity: 0.8;
+    animation: moveCloud linear infinite;
+  }
+
+  @keyframes moveCloud {
+    0% { transform: translateX(-400px); }
+    100% { transform: translateX(1600px); }
+  }
+
+  /* Logo */
+  .logo {
+    display: block;
+    margin: 40px auto 20px auto;
+    width: 300px;
+  }
+
+  /* Sentence */
+  .tagline {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    padding: 0 40px;
+  }
+
+  /* Register button */
+  .center-content {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .register-btn {
+    padding: 30px 80px;
+    font-size: 60px;
+    background: rgba(255, 204, 0, 0.95);
+    color: #000;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+  }
+  .register-btn:hover {
+    background: rgba(255, 170, 0, 0.95);
+  }
+
+  /* Side images with blinking zoom */
+  .side-img {
+    position: absolute;
+    width: 250px;
+    animation: blinkZoom 2s infinite;
+  }
+  .side-left { left: 40px; bottom: 300px; }
+  .side-right { right: 40px; bottom: 300px; }
+
+  @keyframes blinkZoom {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.7; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Clouds -->
+  <img src="https://tse2.mm.bing.net/th/id/OIP.AzzEEAL-K2VEvO0fzwW5sgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" 
+       class="cloud" style="top:100px; animation-duration:50s;">
+  <img src="https://tse2.mm.bing.net/th/id/OIP.AzzEEAL-K2VEvO0fzwW5sgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" 
+       class="cloud" style="top:500px; animation-duration:70s;">
+  <img src="https://tse2.mm.bing.net/th/id/OIP.AzzEEAL-K2VEvO0fzwW5sgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" 
+       class="cloud" style="top:900px; animation-duration:100s;">
+
+  <!-- Logo -->
+  <img src="logo.png" alt="Logo" class="logo">
+
+  <!-- Sentence -->
+  <div class="tagline">
+    You are here to meet Sri Lanka's First Event GEN AI DIAPER EXPERT
+  </div>
+
+  <!-- Register button -->
+  <div class="center-content">
+    <button class="register-btn" onclick="openRegister()">Register</button>
+  </div>
+
+  <!-- Side blinking images -->
+  <img src="1.png" alt="Left Image" class="side-img side-left">
+  <img src="2.png" alt="Right Image" class="side-img side-right">
+
+<script>
+function openRegister() {
+  window.location.href = "registration.html"; // second interface page
+}
+</script>
+
+</body>
+</html>
