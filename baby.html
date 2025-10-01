@@ -17,7 +17,7 @@
     overflow: hidden;
     font-family: 'Dosis', sans-serif;
     background: url('back.jpg') no-repeat center center/cover;
-    background-attachment: fixed; /* background does not move */
+    background-attachment: fixed;
   }
 
   /* Shared logo + tagline */
@@ -63,8 +63,8 @@
     z-index: 0;
     animation: blinkZoom 1.5s infinite;
   }
-  .top-left { top: 20px; left: -400px; width: 100px; }
-  .top-right { top: 450px; right: -360px; width: 150px; }
+  .top-left { top: 20px; left: -300px; width: 100px; }
+  .top-right { top: 150px; right: -360px; width: 150px; }
 
   /* Side images */
   .side-img {
@@ -99,97 +99,109 @@
     z-index: 2;
   }
 
-/* Registration Form */
-.registration-form {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1080px;
-  height: 1920px;
-  z-index: 10;
-  background: rgba(255,255,255,0.2);
-  overflow-y: auto; /* scroll if content exceeds height */
-  box-sizing: border-box;
-}
+  /* Registration Form */
+  .registration-form {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1080px;
+    height: 1920px;
+    z-index: 10;
+    background: rgba(255,255,255,0.2);
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
 
-/* Form mask fills entire screen */
-.form-mask {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start; /* align items at top */
-  width: 100%;
-  height: 100%;
-  padding: 50px 40px;
-  box-sizing: border-box;
-  text-align: center;
-  border-radius: 0; /* full screen */
-}
+  .form-mask {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    padding: 50px 40px;
+    box-sizing: border-box;
+    text-align: center;
+  }
 
-/* Logo inside form */
-.registration-form img { 
-  width: 580px; 
-  margin-bottom: 40px; 
-}
+  .registration-form img { 
+    width: 480px; 
+    margin-bottom: 40px; 
+  }
 
-/* Labels */
-.registration-form label {
-  font-size: 50px;
-  font-weight: 800;
-  color: #7E57C6;
-  margin-top: 20px;
-  text-align: left;
-  width: 100%;
-}
+  .registration-form label {
+    font-size: 50px;
+    font-weight: 800;
+    color: #7E57C6;
+    margin-top: 20px;
+    text-align: left;
+    width: 100%;
+  }
 
-/* Inputs and select */
-.registration-form input[type="text"],
-.registration-form input[type="tel"],
-.registration-form select {
-  width: 100%;
-  padding: 25px;
-  margin: 15px 0 30px 0;
-  font-size: 40px;
-  border-radius: 20px;
-  border: 2px solid #7E57C6;
-  box-sizing: border-box;
-}
+  .registration-form input[type="text"],
+  .registration-form input[type="tel"],
+  .registration-form select {
+    width: 100%;
+    padding: 25px;
+    margin: 15px 0 30px 0;
+    font-size: 40px;
+    border-radius: 20px;
+    border: 2px solid #7E57C6;
+    box-sizing: border-box;
+  }
 
-/* Children ages section */
-.children-ages { 
-  display: none; 
-  width: 100%; 
-}
-.age-row {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 20px;
-}
-.age-row input {
-  flex: 1;
-  font-size: 35px;
-  text-align: center;
-  border: 2px solid #7E57C6;
-  border-radius: 15px;
-  padding: 20px;
-}
+  /* Children ages */
+  .children-ages { display: none; width: 100%; }
+  .age-row {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .age-row input {
+    flex: 1;
+    font-size: 35px;
+    text-align: center;
+    border: 2px solid #7E57C6;
+    border-radius: 15px;
+    padding: 20px;
+  }
 
-/* Submit button */
-.submit-btn {
-  margin-top: 50px;
-  font-size: 45px;
-  padding: 25px 70px;
-  background: #7E57C6;
-  color: #fff;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-}
+  /* Consent */
+  .consent-section {
+    margin-top: 30px;
+    font-size: 28px;
+    line-height: 1.4;
+    color: #333;
+    text-align: left;
+    background: rgba(255,255,255,0.6);
+    padding: 20px;
+    border-radius: 15px;
+  }
+  .consent-section input[type="checkbox"] {
+    transform: scale(2);
+    margin-right: 15px;
+  }
+  .consent-text {
+    font-size: 32px;
+    font-weight: 600;
+    color: #7E57C6;
+  }
 
+  /* Submit */
+  .submit-btn {
+    margin-top: 15px;
+    font-size: 45px;
+    padding: 25px 70px;
+    background: #7E57C6;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+  }
 
-  /* Thank You Page */
+  /* Thank You */
   .thankyou-page {
     display: none;
     width: 1080px;
@@ -201,12 +213,12 @@
 </head>
 <body>
 
-<!-- Landing Page -->
+<!-- Landing -->
 <div id="landingContent">
   <img src="logo.png" alt="Logo" class="logo">
   <div class="tagline">
     <div class="line1">You are here to meet</div>
-    <div class="line2">Sri Lanka's First Event</div>
+    <div class="line2">Sri Lanka's First Ever</div>
     <div class="line3">GEN AI DIAPER EXPERT</div>
   </div>
   <button class="register-btn" onclick="showForm()">Register</button>
@@ -216,7 +228,7 @@
   <img src="c2.png" alt="Bottom Right Cloud" class="bottom-cloud bottom-right blink-cloud">
 </div>
 
-<!-- Registration Form -->
+<!-- Registration -->
 <div class="registration-form" id="registrationForm">
   <img src="c1.png" alt="Top Left Cloud" class="top-cloud top-left">
   <img src="c2.png" alt="Top Right Cloud" class="top-cloud top-right">
@@ -227,7 +239,7 @@
     <input type="text" placeholder="Enter Your Name" id="name">
     <label for="phone">Phone Number</label>
     <input type="tel" placeholder="Enter Your Phone Number" id="phone">
-    <label for="childrenDropdown">Do You Have Children?</label>
+    <label for="childrenDropdown">Are you a parent? </label>
     <select id="childrenDropdown" onchange="showAges(this.value)">
       <option value="">Select</option>
       <option value="yes">Yes</option>
@@ -235,25 +247,37 @@
     </select>
     <div class="children-ages" id="childrenAges">
       <div class="age-row">
+        <!-- <input type="text" placeholder="Child">
         <input type="text" placeholder="Child Age">
         <input type="text" placeholder="Child Age">
-        <input type="text" placeholder="Child Age">
-        <input type="text" placeholder="Child Age">
+        <input type="text" placeholder="Child Age"> -->
       </div>
+    </div>
+
+    <!-- Consent -->
+    <div class="consent-section">
+      <label>
+        <input type="checkbox" id="consentCheckbox">
+        <span class="consent-text">
+           I consent to the use of my content, images, and/or videos captured at this event for marketing and promotional purposes across all media platforms, including but not limited to television, digital, social media, print, and websites.
+        </span>
+      </label>
     </div>
     <button class="submit-btn" onclick="submitForm()">Submit</button>
   </div>
 
+  <!-- Clouds inside registration
   <img src="c2.png" alt="Bottom Left Cloud" class="bottom-cloud bottom-left blink-cloud">
-  <img src="c2.png" alt="Bottom Right Cloud" class="bottom-cloud bottom-right blink-cloud">
+  <img src="c2.png" alt="Bottom Right Cloud" class="bottom-cloud bottom-right blink-cloud"> -->
 </div>
 
-<!-- Thank You Page -->
+<!-- Thank You -->
 <div class="thankyou-page" id="thankYouPage">
   <img src="logo.png" alt="Logo" class="logo">
   <div class="tagline">
-    <div class="line1">THANK YOU FOR REGISTERING</div>
-    <div class="line2">You are all set to meet Sri Lanka’s First Ever</div>
+    <br><br><br><br><br>
+    <div class="line1">THANK YOU FOR REGISTERING</div><br><br><br><br><br>
+    <div class="line2">You are all set to meet <br>Sri Lanka’s First Ever</div>
     <div class="line3">GEN AI DIAPER EXPERT </div>
   </div>
   <img src="c1.png" alt="Left Image" class="side-img side-left">
@@ -267,6 +291,7 @@ const landingContent = document.getElementById('landingContent');
 const registrationForm = document.getElementById('registrationForm');
 const thankYouPage = document.getElementById('thankYouPage');
 const childrenAges = document.getElementById('childrenAges');
+const consentCheckbox = document.getElementById('consentCheckbox');
 
 function showForm() {
   landingContent.style.display = 'none';
@@ -278,34 +303,40 @@ function showAges(value) {
 }
 
 async function submitForm(){
-  // Collect form data
+  if(!consentCheckbox.checked){
+    alert("Please consent to continue.");
+    return;
+  }
+
   const formData = {
     name: document.getElementById('name').value,
     phone: document.getElementById('phone').value,
-    haveChildren: document.getElementById('childrenDropdown').value
+    haveChildren: document.getElementById('childrenDropdown').value,
+    consent: consentCheckbox.checked ? "Yes" : "No"
   };
   if(formData.haveChildren === "yes"){
     formData.ages = Array.from(childrenAges.querySelectorAll('input')).map(i=>i.value).join(', ');
   }
 
-  // Clear form immediately
+  // reset
   document.getElementById('name').value = '';
   document.getElementById('phone').value = '';
   document.getElementById('childrenDropdown').value = '';
+  consentCheckbox.checked = false;
   childrenAges.style.display = 'none';
   Array.from(childrenAges.querySelectorAll('input')).forEach(i => i.value = '');
 
-  // Small delay of 1 second before showing thank you page
+  // show thankyou
   setTimeout(() => {
     registrationForm.style.display = 'none';
     thankYouPage.style.display = 'block';
     setTimeout(() => {
       thankYouPage.style.display = 'none';
       landingContent.style.display = 'block';
-    }, 7000); // Thank you page display duration
-  }, 1000); // 1 second delay
+    }, 7000);
+  }, 1000);
 
-  // Send data to Google Sheets (optional, async)
+  // send to Google Sheets
   const scriptURL = "https://script.google.com/macros/s/AKfycbxPe5ChIpapW8vHfDtJL53x_XZGt-48K74w2WwFXkKEvWfb75HLnsEgHJOE-6fN2UgRlw/exec";
   try {
     await fetch(scriptURL, {
@@ -317,7 +348,5 @@ async function submitForm(){
   }
 }
 </script>
-
-
 </body>
 </html>
